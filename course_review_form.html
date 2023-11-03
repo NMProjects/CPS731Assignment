@@ -6,9 +6,29 @@
 <body>
 
 <form action="#">
-  <label for="courseDifficulty">Course Difficulty</label><br>
-    <p>Please select a number from 1 to 10 with 1 being the easiest:</p>
-    <div id="courseDifficultyInputs"></div>
+  <div id="courseDifficulty">
+    <label for="courseDifficulty">Course Difficulty</label><br>
+      <p>Please select a number from 1 to 10 with 1 being the easiest:</p>
+      <div id="courseDifficultyInputs"></div>
+  </div>
+  <br>
+  <div id="courseEnjoyment">
+    <label for="courseEnjoyment">Course Enjoyment</label><br>
+      <p>Please select a number from 1 to 10 with 1 being the least:</p>
+      <div id="courseEnjoymentInputs"></div>
+  </div>
+  <br>
+  <div id="courseMaterial">
+    <label for="courseMaterial">Course Material</label><br>
+      <p>Please select a number from 1 to 10 with 1 being the worst:</p>
+      <div id="courseMaterialInputs"></div>
+  </div>
+  <br>
+  <div id="courseReview">
+    <label for="courseReview">Course Review</label><br>
+    <input type="text" id="courseReviewInput"  value="Review anything else about the course">
+  </div>
+  <input type="submit" value="Submit">
 </form>
 
 <script>
@@ -34,6 +54,8 @@
   }
 
   createRadioButtons("courseDifficultyInputs")
+  createRadioButtons("courseEnjoymentInputs")
+  createRadioButtons("courseMaterialInputs")
   </script>
 
 </body>
