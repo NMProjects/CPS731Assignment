@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Course Review Form</title>
+</head>
+<body>
+
+<form action="#">
+  <label for="courseDifficulty">Course Difficulty</label><br>
+    <p>Please select a number from 1 to 10 with 1 being the easiest:</p>
+    <div id="courseDifficultyInputs"></div>
+</form>
+
+<script>
+  function createRadioButtons(divID){
+
+    var radioInputsContainer = document.getElementById(divID);
+  
+    for (var i = 1; i <= 10; i++) {
+      var radioInput = document.createElement("input");
+      radioInput.type = "radio";
+      radioInput.id = "radio" + i;
+      radioInput.name = "number";
+      radioInput.value = i;
+  
+      var label = document.createElement("label");
+      label.htmlFor = "radio" + i;
+      label.appendChild(document.createTextNode(i));
+  
+      radioInputsContainer.appendChild(radioInput);
+      radioInputsContainer.appendChild(label);
+      radioInputsContainer.appendChild(document.createElement("br"));
+    }
+  }
+
+  createRadioButtons("courseDifficultyInputs")
+  </script>
+
+</body>
+</html>
