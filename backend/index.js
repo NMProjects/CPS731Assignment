@@ -1,27 +1,25 @@
-const sql = require('mssql')
-
-// code for connecting to database
-// need to choose which user for ID and Password values
-// also run comman npm install mssql
-async () => {
-    try {
-        // make sure that any items are correctly URL encoded in the connection string
-        await sql.connect('Server=oracle.scs.ryerson.ca,1521;Database=database;User Id=username;Password=password;Encrypt=true')
-        const result = await sql.query`select * from mytable where id = ${value}`
-        console.dir(result)
-    } catch (err) {
-        // ... error checks
-    }
+const oracledb = require('oracledb')
+const config = {
+  user: 'user',
+  password: '<password>',
+  connectString: '//oracle.scs.ryerson.ca:1521/orcl'
 }
 
-const express = require("express");
-const app = express();
-const port = 3000;
+async function checkConn (empId) {
+  let conn
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-});
+  try {
+    conn = await oracledb.getConnection(config)
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+
+    console.log("Connected")
+  } catch (err) {
+    console.error(err)
+  } finally {
+    if (conn) { // conn assignment worked, need to close
+      await conn.close()
+    }
+  }
+}
+
+checkConn()
