@@ -1,11 +1,25 @@
-const express = require("express");
-const app = express();
-const port = 3000;
+const oracledb = require('oracledb')
+const config = {
+  user: 'user',
+  password: '<password>',
+  connectString: '//oracle.scs.ryerson.ca:1521/orcl'
+}
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-});
+async function checkConn (empId) {
+  let conn
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+  try {
+    conn = await oracledb.getConnection(config)
+
+
+    console.log("Connected")
+  } catch (err) {
+    console.error(err)
+  } finally {
+    if (conn) { // conn assignment worked, need to close
+      await conn.close()
+    }
+  }
+}
+
+checkConn()
