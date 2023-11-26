@@ -6,6 +6,10 @@
 <body>
 
 <form name="course_review" action="../backend/course_review.php" method="post">
+  <div id="courseCode" name="courseCode">
+    <label for="courseCode">Course Code</label><br>
+    <input type="text" id="courseCode" name="courseCode" placeholder="Enter Course Code"><br><br>
+  </div>
   <div id="courseDifficulty" name="courseDifficulty">
     <label for="courseDifficulty">Course Difficulty</label><br>
       <p>Please select a number from 1 to 10 with 1 being the easiest:</p>
@@ -26,9 +30,13 @@
   <br>
   <div id="courseReview">
     <label for="courseReview">Course Review</label><br>
-    <input type="text" id="courseReviewInput" name="courseReview" placeholder="Review anything else about the course" name="courseReview">
+    <input type="text" id="courseReviewInput" name="courseReview" placeholder="Review anything else about the course">
   </div>
   <br><br>
+  <div id="courseGrade">
+    <label for="courseReview">Enter the grade you recieved for this course</label><br>
+    <select name="courseGrade" id="courseGradeDropdown"></select>
+  </div><br><br>
   <input type="submit" value="Submit">
 </form>
 
@@ -37,7 +45,7 @@
     createRadioButtons("courseDifficultyInputs")
     createRadioButtons("courseEnjoymentInputs")
     createRadioButtons("courseMaterialInputs")
-  
+    createGradeDropdown("courseGradeDropdown")
 
 </script>
 
