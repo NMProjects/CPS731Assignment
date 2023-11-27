@@ -1,5 +1,7 @@
+<?php
+// Start the session
+session_start();
 
-<?php 
 $conn = oci_connect('ethorley', '17172113',
 '(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=oracle.scs.ryerson.ca)(Port=1521))(CONNECT_DATA=(SID=orcl)))');
 if ($conn){ 
@@ -18,10 +20,16 @@ $r = oci_execute($stid);
 print "<br>";
 while($row=oci_fetch_array($stid)){
   $storedPassword = $row[0];
-  echo $cryptpass == $storedPassword;
 }
 
-print "<br>";
+if ($storedPassword == $cryptpass){
+  echo "login success";
+  $_SESSION['login'] = true;
+  $_SESSION['user'] = $uname;
+  echo $_SESSION['user'];
+}else{
+  echo "login unsuccessful";
+}
 
 oci_close($conn);
 
