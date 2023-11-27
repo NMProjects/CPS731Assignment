@@ -11,11 +11,11 @@ if ($conn){
   }
 $uname = filter_var($_POST["uname"], FILTER_SANITIZE_EMAIL);
 $pword = $_POST["pword"];
-$cryptpass = crypt($pword, PASSWORD_BCRYPT);
+$cryptpass = crypt($pword, 'tmu');
 
 echo $uname;
 
-$query = "INSERT INTO USERS (email, pword) VALUES ($uname, $cryptpass)";
+$query = "INSERT INTO USERS (email, pword) VALUES ('$uname', '$cryptpass')";
 $stid = oci_parse($conn, $query);
 $r = oci_execute($stid);
 echo "$uname registered";

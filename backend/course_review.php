@@ -1,17 +1,49 @@
 <?php
 session_start();
 ?>
+<?php
+$conn = oci_connect('ethorley', '17172113',
+'(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=oracle.scs.ryerson.ca)(Port=1521))(CONNECT_DATA=(SID=orcl)))');
+if ($conn){ 
+}else{
+    print("Connection Failed ");
+    $m = oci_error();
+    print($m['message']);
+  }
 
-<html>
-<body>
+  $showDivFlag = false;
 
-User: <?php echo $_SESSION["user"]; ?><br>
-Course: <?php echo $_POST["courseCode"]; ?><br>
-Difficulty <?php echo $_POST["courseDifficultyInputsNumber"]; ?><br>
-Enjoyment: <?php echo $_POST["courseEnjoymentInputsNumber"]; ?><br>
-Material: <?php echo $_POST["courseMaterialInputsNumber"]; ?><br>
-Review: <?php echo $_POST["courseReview"]; ?><br>
-Grade: <?php echo $_POST["courseGrade"]; ?>
+if ($_SESSION['login'] == true) {
+
+$uname = $_SESSION["user"]; 
+$coursecode = $_POST["courseCode"];
+$difficulty = $_POST["courseDifficultyInputsNumber"];
+$enjoyment = $_POST["courseEnjoymentInputsNumber"];
+$material = $_POST["courseMaterialInputsNumber"]; 
+$review = $_POST["courseReview"]; 
+$grade = $_POST["courseGrade"]; 
+
+$query = "INSERT INTO COURSEREVIEW (uname, coursecode, difficulty, enjoyment, material, review, grade) 
+VALUES ('$uname','$coursecode', $difficulty, $enjoyment, $material, '$review', $grade)";
+$stid = oci_parse($conn, $query);
+$r = oci_execute($stid);
+
+//echo $query;
+oci_close($conn);
+
+echo "Your review has been submitted: <br>
+Course:  $coursecode <br>
+Difficulty: $difficulty<br>
+Enjoyment:  $enjoyment<br>
+Material: $material<br>
+Review: $review<br>
+Grade: $grade";
+}else{
+    echo "You must be logged in";
+}
+?>
+
+
 
 </body>
 </html> 
