@@ -15,7 +15,7 @@ if ($_SESSION['login'] == true) {
 
 $uname = $_SESSION["user"]; 
 $school = $_POST["courseSchool"];
-$review = $_POST["profReview"]; 
+$review = $_POST["uniReview"]; 
 
 $query = "INSERT INTO UNIREVIEW (uname, school, review) 
 VALUES ('$uname','$school', '$review')";
