@@ -23,6 +23,10 @@ print "<br>";
 
 oci_close($conn);
 
+echo '<a href="login.html">Login</a>';
+echo '<br><br><a href="main.html">Home   </a><br><br>';
+
+
 ?>
 
 

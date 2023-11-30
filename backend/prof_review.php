@@ -11,20 +11,18 @@ if ($conn){
     print($m['message']);
   }
 
-  $showDivFlag = false;
-
 if ($_SESSION['login'] == true) {
 
 $uname = $_SESSION["user"]; 
-$coursecode = $_POST["courseCode"];
-$difficulty = $_POST["courseDifficultyInputsNumber"];
-$enjoyment = $_POST["courseEnjoymentInputsNumber"];
-$material = $_POST["courseMaterialInputsNumber"]; 
-$review = $_POST["courseReview"]; 
-$grade = $_POST["courseGrade"]; 
+$school = $_POST["courseSchool"];
+$prof = $_POST["profName"];
+$difficulty = $_POST["profDifficultyInputsNumber"];
+$clarity = $_POST["profClarityInputsNumber"];
+$helpfulness = $_POST["profHelpfulnessInputsNumber"]; 
+$review = $_POST["profReview"]; 
 
-$query = "INSERT INTO COURSEREVIEW (uname, coursecode, difficulty, enjoyment, material, review, grade) 
-VALUES ('$uname','$coursecode', $difficulty, $enjoyment, $material, '$review', $grade)";
+$query = "INSERT INTO PROFREVIEW (uname, school, profname, difficulty, clarity, helpfulness, review) 
+VALUES ('$uname','$school', '$profname', $difficulty, $clarity, $helpfulness, '$review')";
 $stid = oci_parse($conn, $query);
 $r = oci_execute($stid);
 
@@ -32,12 +30,13 @@ $r = oci_execute($stid);
 oci_close($conn);
 
 echo "Your review has been submitted: <br>
-Course:  $coursecode <br>
+Professor:  $prof <br>
+School: $school <br>
 Difficulty: $difficulty<br>
-Enjoyment:  $enjoyment<br>
-Material: $material<br>
-Review: $review<br>
-Grade: $grade";
+Clarity:  $enjoyment<br>
+Helpfulness: $material<br>
+Review: $review<br>";
+
 }else{
     echo "You must be logged in";
     echo '<br><br><a href="login.html">Login</a>';

@@ -1,6 +1,5 @@
 # CPS731Assignment
 
-please cd into backend folder
-open command prompt
-run npm install
-then npm start
+hosted at: 
+webdev.scs.torontomu.ca/~ethorley/main.html
+must be signed in to TMU CS server 
