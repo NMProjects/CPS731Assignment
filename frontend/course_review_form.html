@@ -10,6 +10,10 @@
     <label for="courseCode">Course Code</label><br>
     <input type="text" id="courseCode" name="courseCode" placeholder="Enter Course Code"><br><br>
   </div>
+  <div id="courseSchool">
+    <label for="courseSchool">Select the University</label><br>
+    <select name="courseSchool" id="courseSchoolDropdown"></select>
+  </div><br><br>
   <div id="courseDifficulty" name="courseDifficulty">
     <label for="courseDifficulty">Course Difficulty</label><br>
       <p>Please select a number from 1 to 10 with 1 being the easiest:</p>
@@ -46,6 +50,7 @@
     createRadioButtons("courseEnjoymentInputs")
     createRadioButtons("courseMaterialInputs")
     createGradeDropdown("courseGradeDropdown")
+    createSchoolDropdown("courseSchoolDropdown")
 
 </script>
 

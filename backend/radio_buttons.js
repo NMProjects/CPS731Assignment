@@ -24,4 +24,36 @@ function createGradeDropdown(divID){
     dropdown.appendChild(o);
   }
 }
+
+  var ontarioUniversities = [
+    "University of Toronto",
+    "Queen's University",
+    "McMaster University",
+    "University of Waterloo",
+    "University of Western Ontario",
+    "York University",
+    "Toronto Metropolitan University",
+    "Carleton University",
+    "University of Ottawa",
+    "University of Guelph",
+    "Brock University",
+    "Wilfrid Laurier University",
+    "Lakehead University",
+    "Nipissing University",
+    "Trent University",
+    "Ontario Tech University",
+    "Algoma University",
+    "Laurentian University"
+  ];
+  ontarioUniversities.sort();
+
+  function createSchoolDropdown(divID){
+    var dropdown = document.getElementById(divID);
+    for (var i in ontarioUniversities) {
+      console.log(ontarioUniversities[i])
+      s = new Option(ontarioUniversities[i],ontarioUniversities[i])
+      dropdown.appendChild(s);
+    }
+
+}
   
