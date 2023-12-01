@@ -3,6 +3,7 @@ var htmlPages = [
     "course_review_form",
     "prof_review_form",
     "course_review_form",
+    "view_prof",
     "register",
     "login",
     "logout",
