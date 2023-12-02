@@ -4,17 +4,37 @@
     <title>Review</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="index.css" />
-    <script src="cookie.js"></script>
+    <script src="navbar.js"></script>
     <script>
-        window.addEventListener("load", function () {
-            if (getCookie("login") == "") {
-                document.getElementById("logout").style.visibility = "hidden";
-                document.getElementById("review").style.visibility = "hidden";
+        async function signUp() {
+            // Get form values
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+
+            // Create a data object with form values
+            var resultMsg = document.getElementById("result");
+            var data = {
+                name: name,
+                password: password,
+            };
+
+            // Send POST request to backend endpoint
+            const response = await fetch("http://localhost:3000/signUp/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                resultMsg.innerText = "User Signed UP!";
+                await localStorage.setItem("login", name);
+                window.location.href = "./index.html";
             } else {
-                document.getElementById("login").style.visibility = "hidden";
-                document.getElementById("signup").style.visibility = "hidden";
+                resultMsg.innerText = "Username is taken!";
             }
-        });
+        }
     </script>
 
     <body>
@@ -36,8 +56,18 @@
 
         <main>
             <section>
-                <h1>Welcome to the Site</h1>
-                <p>This is the main content of the site.</p>
+                <h1 id="result"></h1>
+                <form>
+                    <label for="name">Username:</label><br />
+                    <input type="text" id="name" name="name" /><br />
+                    <label for="password">Password:</label><br />
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                    /><br /><br />
+                    <input type="button" value="Sign Up" onclick="signUp()" />
+                </form>
             </section>
         </main>
     </body>

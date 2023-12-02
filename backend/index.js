@@ -16,9 +16,9 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
 
-app.get("/signUp/:username/:password", async function (req, res) {
-    var username = req.params["username"];
-    var password = req.params["password"];
+app.post("/signUp", async function (req, res) {
+    var username = req.body["name"];
+    var password = req.body["password"];
 
     const { error } = await supa.supaClient
         .from("users")

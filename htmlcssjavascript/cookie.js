@@ -3,7 +3,6 @@
 
 // Get the 'username' cookie value and display it
 //const username = getCookie("username");
-x;
 // Delete the 'username' cookie after displaying its value
 //deleteCookie("username");
 
@@ -12,8 +11,14 @@ function setCookie(cookieName, cookieValue, expirationDays) {
     const d = new Date();
     d.setTime(d.getTime() + expirationDays * 24 * 60 * 60 * 1000);
     const expires = "expires=" + d.toUTCString();
-    document.cookie =
-        cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+    const cookieString =
+        encodeURIComponent(cookieName) +
+        "=" +
+        encodeURIComponent(cookieValue) +
+        ";" +
+        expires +
+        ";path=/";
+    document.cookie = cookieString;
 }
 
 // Function to get a cookie by name
