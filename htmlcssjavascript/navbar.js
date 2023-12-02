@@ -16,5 +16,5 @@ window.addEventListener("load", function () {
 
 function unSetLogin() {
     localStorage.setItem("login", "");
-    window.location.href = "./index.html";
+    window.location.href = "./ho";
 }
