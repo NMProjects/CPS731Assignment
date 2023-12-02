@@ -15,3 +15,26 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
+
+app.get("/signUp/:username/:password", async function (req, res) {
+    var username = req.params["username"];
+    var password = req.params["password"];
+
+    const { error } = await supa.supaClient
+        .from("users")
+        .insert({ username: username, password: password });
+
+    if (error) {
+        res.status(404).json({
+            status: 404,
+            error: "Cannot make user",
+            data: [],
+        });
+    } else {
+        res.status(200).json({
+            status: 200,
+            statusText: "OK",
+            data: "",
+        });
+    }
+});
