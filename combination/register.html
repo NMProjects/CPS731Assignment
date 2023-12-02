@@ -1,7 +1,25 @@
 <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <title>OMCU</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="navbar.js"></script>
 
+    <body>
+        <header>
+            <nav><ul class="navbar"></ul></nav>
+        </header>
+    </body>
+
+    <script src="navbar.js"></script>
+    <script>
+        createNavbar();
+    </script>
+</head>
 
 <body>
+    <section>
     <form name="register" action="../backend/register.php" method="post">
         
         <div>
@@ -16,5 +34,6 @@
 
         <input type="submit" value="Submit">
     </form>
+    </section>
 </body>
 </html>

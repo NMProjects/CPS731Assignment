@@ -2,11 +2,22 @@ var htmlPages = [
     "main",
     "course_review_form",
     "prof_review_form",
-    "course_review_form",
+    "university_review_form",
     "view_prof",
     "register",
     "login",
     "logout",
+];
+
+var niceNames = [
+    "Home",
+    "Review a course",
+    "Review a prof",
+    "Review a university",
+    "View Professors",
+    "Register",
+    "Login",
+    "Logout",
 ];
 async function createNavbar() {
     var nav = document.getElementsByClassName("navbar")[0];
@@ -21,7 +32,7 @@ async function createNavbar() {
             };
         })(ref);
 
-        buttons.innerText = name;
+        buttons.innerText = niceNames[i];
         await nav.appendChild(buttons);
     }
 }
