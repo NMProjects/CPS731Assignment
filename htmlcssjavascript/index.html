@@ -4,6 +4,15 @@
     <title>Review</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="index.css" />
+    <script src="cookie.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            if (getCookie("login") == "") {
+                var elem = document.getElementById("logout");
+                elem.style.display = "none";
+            }
+        });
+    </script>
 
     <body>
         <header>
@@ -14,7 +23,8 @@
                     <li><a href="professor.html">View Professor</a></li>
                     <li><a href="course.html">View Course</a></li>
                     <li><a href="login.html">Login</a></li>
-                    <li><button class="button">Logout</button></li>
+                    <li><a href="signup.html">Signup</a></li>
+                    <li><button id="logout" class="button">Logout</button></li>
                 </ul>
             </nav>
         </header>
