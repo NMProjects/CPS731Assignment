@@ -7,22 +7,19 @@ var htmlPages = [
     "register",
     "login",
     "logout",
-
-
 ];
 
-function createNavbar(){
-    var nav = document.getElementsByClassName("navbar")[0]
-    console.log(nav)
-    for (var i in htmlPages){
-        var li = document.createElement("li")
+function createNavbar() {
+    var nav = document.getElementsByClassName("navbar")[0];
+    console.log(nav);
+    for (var i in htmlPages) {
+        var buttons = document.createElement("button");
         var name = htmlPages[i];
         var ref = name + ".html";
         var tag = document.createElement("a");
-        tag.setAttribute("href",ref);
+        tag.setAttribute("href", ref);
         tag.innerHTML = name;
-        li.appendChild(tag);
-        nav.appendChild(li);
-    } 
-};
-
+        buttons.appendChild(tag);
+        nav.appendChild(buttons);
+    }
+}
