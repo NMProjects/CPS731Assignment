@@ -38,3 +38,26 @@ app.post("/signUp", async function (req, res) {
         });
     }
 });
+
+app.post("/login", async function (req, res) {
+    var username = req.body["name"];
+    var password = req.body["password"];
+
+    const { error } = await supa.supaClient
+        .from("users")
+        .insert({ username: username, password: password });
+
+    if (error) {
+        res.status(404).json({
+            status: 404,
+            error: "Cannot verify login information",
+            data: [],
+        });
+    } else {
+        res.status(200).json({
+            status: 200,
+            statusText: "OK",
+            data: "",
+        });
+    }
+});
