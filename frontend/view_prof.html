@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Professor View</title>
+    <meta charset="UTF-8" />
+    <title>OMCU</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="navbar.js"></script>
+
+    <body>
+        <header>
+            <nav><ul class="navbar"></ul></nav>
+        </header>
+    </body>
+
+    <script src="navbar.js"></script>
+    <script>
+        createNavbar();
+    </script>
 </head>
 
 <body>
+    <section>
 <form name="profSearch" action="../backend/search_prof.php" method="post">
     <div id="profSearch">
         <label for="profName">Enter the Professors Name: </label>
@@ -12,4 +28,5 @@
         <input type="submit" Value="Search"></button>
     </div>
 </form>
+</section>
 </body>

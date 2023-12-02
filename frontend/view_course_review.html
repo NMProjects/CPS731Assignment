@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Course Review View</title>
+    <meta charset="UTF-8" />
+    <title>OMCU</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="navbar.js"></script>
+
+    <body>
+        <header>
+            <nav><ul class="navbar"></ul></nav>
+        </header>
+    </body>
+
+    <script src="navbar.js"></script>
+    <script>
+        createNavbar();
+    </script>
 </head>
 
 <body>
+    <section>
 <form name="CourseReviewSearch" action="../backend/search_course_review.php" method="post">
     <div id="CourseReviewSearch">
         <label for="CourseID">Enter the Course ID: </label>
@@ -12,5 +28,6 @@
         <input type="submit" Value="Search"></button>
     </div>
 </form>
+    </section>
 </body>
 
