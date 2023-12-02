@@ -34,17 +34,18 @@ function printTable($stid){
 $profname = filter_var($_POST["profName"], FILTER_SANITIZE_MAGIC_QUOTES);
 
 $query2 = "select school, difficulty, clarity, helpfulness, review
-from profreview where profname ='". $profname . "'";
+from profreview where profname LIKE '%". $profname . "%'";
 
 
-$query1= "Select AVG(difficulty) AS \"Average Difficulty\", AVG(clarity) AS \"Average Clarity\", AVG(helpfulness) AS \"Average Helpfulness\"
-from profreview where profname ='". $profname . "'";
+$query1= "Select profname AS \"Professor\: \", AVG(difficulty) AS \"Average Difficulty\", AVG(clarity) AS \"Average Clarity\", AVG(helpfulness) AS \"Average Helpfulness\"
+from profreview where profname LIKE '%". $profname . "%'";
 
 echo $profname;
 echo ": <br>";
 $stid = oci_parse($conn, $query1);
 $r = oci_execute($stid);
 printTable($stid);
+echo "<br><br>";
 
 echo "Recent Reviews :<br>";
 $stid = oci_parse($conn, $query2);

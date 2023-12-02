@@ -6,10 +6,15 @@
 
 <body>
 <form name="UniReviewSearch" action="../backend/search_prof.php" method="post">
-    <div id="UniReviewSearch">
-        <label for="UniName">Enter the University name: </label>
-        <input id="UniName" type="text" name="UniName">
-        <input type="submit" Value="Search"></button>
-    </div>
+    <div id="courseSchool">
+        <label for="courseSchool">Select the University</label><br>
+        <select name="courseSchool" id="courseSchoolDropdown"></select>
+      </div><br><br>
 </form>
+
+<script src="../backend/radio_buttons.js"></script>
+<script>
+    createSchoolDropdown("courseSchoolDropdown")
+</script>
 </body>
+</html>
