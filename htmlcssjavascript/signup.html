@@ -8,11 +8,20 @@
     <script>
         async function signUp() {
             // Get form values
+            var resultMsg = document.getElementById("result");
             var name = document.getElementById("name").value;
             var password = document.getElementById("password").value;
 
+            if (name == "") {
+                resultMsg.innerText = "USERNAME CANNOT BE EMPTY";
+                return;
+            }
+            if (password == "") {
+                resultMsg.innerText = "PASSWORD CANNOT BE EMPTY";
+                return;
+            }
+
             // Create a data object with form values
-            var resultMsg = document.getElementById("result");
             var data = {
                 name: name,
                 password: password,
@@ -99,7 +108,7 @@
                 <h1 id="result"></h1>
                 <form>
                     <label for="name">Username:</label><br />
-                    <input type="text" id="name" name="name" /><br />
+                    <input type="text" id="name" name="name" required /><br />
                     <label for="password">Password:</label><br />
                     <input
                         type="password"

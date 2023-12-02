@@ -13,6 +13,15 @@
 
             // Create a data object with form values
             var resultMsg = document.getElementById("result");
+
+            if (name == "") {
+                resultMsg.innerText = "USERNAME CANNOT BE EMPTY";
+                return;
+            }
+            if (password == "") {
+                resultMsg.innerText = "PASSWORD CANNOT BE EMPTY";
+                return;
+            }
             var data = {
                 name: name,
                 password: password,
