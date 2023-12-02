@@ -43,11 +43,13 @@ app.post("/login", async function (req, res) {
     var username = req.body["name"];
     var password = req.body["password"];
 
-    const { error } = await supa.supaClient
+    const { data, error } = await supa.supaClient
         .from("users")
-        .insert({ username: username, password: password });
+        .select()
+        .eq("username", username)
+        .eq("password", password);
 
-    if (error) {
+    if (data[0] == null) {
         res.status(404).json({
             status: 404,
             error: "Cannot verify login information",
