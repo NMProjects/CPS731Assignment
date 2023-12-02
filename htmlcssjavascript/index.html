@@ -8,8 +8,11 @@
     <script>
         window.addEventListener("load", function () {
             if (getCookie("login") == "") {
-                var elem = document.getElementById("logout");
-                elem.style.display = "none";
+                document.getElementById("logout").style.visibility = "hidden";
+                document.getElementById("review").style.visibility = "hidden";
+            } else {
+                document.getElementById("login").style.visibility = "hidden";
+                document.getElementById("signup").style.visibility = "hidden";
             }
         });
     </script>
@@ -19,11 +22,13 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="review.html">Write a review</a></li>
+                    <li>
+                        <a id="review" href="review.html">Write a review</a>
+                    </li>
                     <li><a href="professor.html">View Professor</a></li>
                     <li><a href="course.html">View Course</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="signup.html">Signup</a></li>
+                    <li><a id="login" href="login.html">Login</a></li>
+                    <li><a id="signup" href="signup.html">Signup</a></li>
                     <li><button id="logout" class="button">Logout</button></li>
                 </ul>
             </nav>
