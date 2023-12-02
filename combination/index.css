@@ -4,7 +4,7 @@ body {
 }
 
 header {
-    background-color: rgb(200, 200, 200);
+    background-color: #292828;
     color: white;
     padding: 10px 0;
 }
@@ -38,7 +38,7 @@ section {
 
 a {
     text-decoration: none;
-    color: rgb(255, 255, 255) 020; /* Change link color */
+    color: #333; /* Change link color */
     transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
@@ -50,7 +50,7 @@ a:hover {
 button {
     padding: 8px 16px;
     background-color: transparent;
-    color: #ffffff;
+    color: #007bff;
     border: none;
     border-radius: 4px;
     text-decoration: none;
@@ -62,7 +62,6 @@ button {
 
 button:hover {
     background-color: lightgoldenrodyellow;
-    color: white;
 }
 
 .custom-button {

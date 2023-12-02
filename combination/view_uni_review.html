@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<head>
+    <title>University Review View</title>
+</head>
+
+<body>
+<form name="UniReviewSearch" action="../backend/search_prof.php" method="post">
+    <div id="courseSchool">
+        <label for="courseSchool">Select the University</label><br>
+        <select name="courseSchool" id="courseSchoolDropdown"></select>
+      </div><br><br>
+</form>
+
+<script src="../backend/radio_buttons.js"></script>
+<script>
+    createSchoolDropdown("courseSchoolDropdown")
+</script>
+</body>
+</html>
