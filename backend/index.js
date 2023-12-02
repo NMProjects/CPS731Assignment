@@ -1,25 +1,17 @@
-const oracledb = require('oracledb')
-const config = {
-  user: 'user',
-  password: '<password>',
-  connectString: '//oracle.scs.ryerson.ca:1521/orcl'
-}
+const express = require("express");
 
-async function checkConn (empId) {
-  let conn
+const supa = require("./database.js");
+const cors = require("cors");
+const app = express();
 
-  try {
-    conn = await oracledb.getConnection(config)
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+const port = 3000;
 
-
-    console.log("Connected")
-  } catch (err) {
-    console.error(err)
-  } finally {
-    if (conn) { // conn assignment worked, need to close
-      await conn.close()
-    }
-  }
-}
-
-checkConn()
+app.get("/", (req, res) => {
+    res.send("Backend API is running 🎉");
+});
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
+});
