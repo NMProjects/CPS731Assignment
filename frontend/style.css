@@ -7,7 +7,7 @@
 .header {
     min-height:100vh;
     width: 100%;
-    background-color: rgba(83, 77, 107, 0.664);
+    background-color:#F2F2EB;
     
     
     
@@ -15,15 +15,24 @@
 h1 {
     font-size: 50px;
     font-style: italic;
-    color: white;
+    color: #F2F2EB;
     position: center;
     text-align: center;
     font-weight: bold;
-    
+    background-color: #202E44;
     padding: 2%;
 
 }
-
+p{
+    font-size: 100px;
+    font-style: oblique;
+    color: #8B734C;
+    position: center;
+    font-weight: bold;
+    padding: 1px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 nav {
     display: flex;
     padding: 2% 10%;
@@ -31,7 +40,7 @@ nav {
     align-items: left;
     height: 35px;
   /*  background-color: #2d1b74;*/
-    background-image: linear-gradient(#2d1b74, rgb(19, 6, 49)1, 51); 
+     
     width: 1024px;
     height: 100px;
        
@@ -58,20 +67,23 @@ nav {
     display: inline-block;
     padding: 2px 8px;
     position: relative;
-    text-align: center;    
+    text-align: center;   
+
 }
 
 .nav-links ul li a{
-    color:#fff;
+    color:#7f95a9;
     text-decoration: none;
     font-size: 13px;
+    justify-content: space-between;
+    
     
 }
 .nav-links ul li::after {
     content:'';
     width: 0%;
     height: 2px;
-    background: white;
+    background: #8B734C;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -81,7 +93,7 @@ nav {
 .nav-links ul li:hover::after{
     width: 100%;
 }
-.text-box h1{
+/*.text-box h1{
     font-size: 62px;
     color: #fff;
     width: 80%;
@@ -109,7 +121,8 @@ nav {
 
     }
 
-}
+} */
+
 .container{
     display:flex;
     align-items: center;
@@ -118,7 +131,7 @@ nav {
 .search-bar{
     width:90%;
     max-width: 700px;
-    background: rgba(255,255,255,.2);
+    background:#a9bbcb95;
     display:flex;
     align-items: center;
     border-radius: 60px;
@@ -148,7 +161,6 @@ nav {
     border-radius: 50%;
     width: 35px;
     height: 35px;
-    background: #8b95cbc3;
+    background: #a9bbcb95;
     cursor: pointer;
 }
-
