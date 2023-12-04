@@ -7,10 +7,9 @@
 .header {
     min-height:100vh;
     width: 100%;
-    background-color: rgba(21, 13, 56, 0.664);
-    background-position: center;
-    background-size: cover;
-    position: relative;
+    background-color: rgba(83, 77, 107, 0.664);
+    
+    
     
 }
 h1 {
@@ -20,6 +19,9 @@ h1 {
     position: center;
     text-align: center;
     font-weight: bold;
+    
+    padding: 2%;
+
 }
 
 nav {
@@ -29,7 +31,10 @@ nav {
     align-items: left;
     height: 35px;
   /*  background-color: #2d1b74;*/
-    background-image: linear-gradient(#2d1b74, rgb(19, 6, 49)1, 51);    
+    background-image: linear-gradient(#2d1b74, rgb(19, 6, 49)1, 51); 
+    width: 1024px;
+    height: 100px;
+       
 }
 
 .nav-links {
@@ -37,20 +42,21 @@ nav {
    
     display: inline-block;
    /* background-image: linear-gradient(#2d1b74, rgb(19, 6, 49)1, 51);*/
-   align-items: left;    
+   align-items: center;
 }
 
 .nav-links ul {
     margin: 0;
     padding: 0;
-    display: inline-block;  
-    font-size: 10px;  
+    display:block;  
+    font-size: 13px; 
+    align-items: center; 
 }
 
 .nav-links ul li {
     list-style: none;
     display: inline-block;
-    padding: 8px 12px;
+    padding: 2px 8px;
     position: relative;
     text-align: center;    
 }
@@ -59,15 +65,17 @@ nav {
     color:#fff;
     text-decoration: none;
     font-size: 13px;
+    
 }
 .nav-links ul li::after {
     content:'';
     width: 0%;
     height: 2px;
-    background: #f443369b;
+    background: white;
     display: block;
     margin: auto;
     transition: 0.5s;
+
 }
 
 .nav-links ul li:hover::after{
@@ -78,7 +86,7 @@ nav {
     color: #fff;
     width: 80%;
     margin: auto;
-    margin-top: 2cm;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 }
 
@@ -116,7 +124,7 @@ nav {
     border-radius: 60px;
     padding: 10px 20px;
     height: 35px;
-    margin-top: .5cm;
+    margin-top: .3cm;
     backdrop-filter: blur(2px) saturate(180%);
 }
 .search-bar input{
@@ -126,7 +134,7 @@ nav {
     outline: none;
     padding: 24px 20px;
     font-size: 20px;
-    color: #cac4ff;
+    color: white;
     
 }
 ::placeholder{
@@ -143,3 +151,4 @@ nav {
     background: #8b95cbc3;
     cursor: pointer;
 }
+
