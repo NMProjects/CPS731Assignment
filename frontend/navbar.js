@@ -1,5 +1,5 @@
 var htmlPages = [
-    "main",
+    "homepage",
     "course_review_form",
     "prof_review_form",
     "university_review_form",
