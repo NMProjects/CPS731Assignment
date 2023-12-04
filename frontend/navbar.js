@@ -13,15 +13,15 @@ var htmlPages = [
 
 var niceNames = [
     "Home",
-    "Review a course",
-    "Review a prof",
-    "Review a university",
+    "Review Course",
+    "Review Professor",
+    "Review University",
     "View Courses",
     "View Professors",
     "View Universities",
     "Register",
     "Login",
-    "Logout",
+    "Logout"
 ];
 async function createNavbar() {
     var nav = document.getElementsByClassName("navbar")[0];
