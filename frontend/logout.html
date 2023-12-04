@@ -1,8 +1,30 @@
 <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <title>OMCU</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="navbar.js"></script>
+
+    <body>
+        <header>
+            <nav><ul class="navbar"></ul></nav>
+        </header>
+    </body>
+
+    <script src="navbar.js"></script>
+    <script>
+        createNavbar();
+    </script>
+</head>
 
 <body>
-    <form name="logout" action="../backend/logout.php" method="post">
-        <input type="submit" value="Submit">
-    </form>
+    <div class="logout">
+
+        <form name="logout" action="../backend/logout.php" method="post">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
+
 </html>
