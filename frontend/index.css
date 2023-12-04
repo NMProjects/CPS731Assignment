@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #F2F2EB;
 }
 /*.background {
     min-height:100vh;
@@ -13,8 +14,8 @@ body {
     }
 */
 header {
-    background-color:  rgba(83, 77, 107, 0.664);
-    color: rgba(34, 27, 60, 0.664);
+    background-color:#202E44;
+    color: #202E44;
     padding: 10px 0;
 }
 
@@ -67,8 +68,9 @@ button {
     text-decoration: none;
     font-size: large;
     cursor: pointer; /* Change cursor on hover */
-    transition: color 0.3s ease, background-color 0.3s ease,
-        border-color 0.3s ease;
+    transition: color 0.3s ease;
+    background-color: 0.3s ease;
+    border-color:0.3s ease;
 }
 
 button:hover {
@@ -87,4 +89,8 @@ button:hover {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+}
+.logout {
+    margin-top: 3cm;
+    margin-left: 50%;
 }
