@@ -2,8 +2,8 @@
     margin:0;
     padding:0;
     font-family:Arial, Helvetica, sans-serif;
-
 }
+
 .header {
     min-height:100vh;
     width: 100%;
@@ -11,9 +11,7 @@
     background-position: center;
     background-size: cover;
     position: relative;
-
     
-
 }
 h1 {
     font-size: 50px;
@@ -22,44 +20,41 @@ h1 {
     position: center;
     text-align: center;
     font-weight: bold;
-
 }
+
 nav {
     display: flex;
-    padding: 2% 80%;
+    padding: 2% 10%;
     justify-content: space-between;
-    align-items: center;
-    height: 75px;
+    align-items: left;
+    height: 35px;
   /*  background-color: #2d1b74;*/
-    background-image: linear-gradient(#2d1b74, rgb(19, 6, 49)1, 51);
-    
+    background-image: linear-gradient(#2d1b74, rgb(19, 6, 49)1, 51);    
 }
+
 .nav-links {
     flex: 1;
    
     display: inline-block;
    /* background-image: linear-gradient(#2d1b74, rgb(19, 6, 49)1, 51);*/
-    margin-top: auto;
-    
-
-    
-    
+   align-items: left;    
 }
+
 .nav-links ul {
     margin: 0;
     padding: 0;
-    display: inline-block;
-    
+    display: inline-block;  
+    font-size: 10px;  
 }
+
 .nav-links ul li {
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
-    text-align: center;
-
-    
+    text-align: center;    
 }
+
 .nav-links ul li a{
     color:#fff;
     text-decoration: none;
@@ -73,8 +68,8 @@ nav {
     display: block;
     margin: auto;
     transition: 0.5s;
-
 }
+
 .nav-links ul li:hover::after{
     width: 100%;
 }
@@ -82,10 +77,9 @@ nav {
     font-size: 62px;
     color: #fff;
     width: 80%;
-    margin:auto;
+    margin: auto;
+    margin-top: 2cm;
     text-align: center;
-    
-
 }
 
 @media(max-width: 700px){
