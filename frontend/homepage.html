@@ -7,7 +7,7 @@
     
     <title> OMCU - Homepage </title>
     <meta name="description" content=" Rate or view ratings for your desired professor, course, campus and many more!">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body> 
@@ -18,7 +18,7 @@
             <div class="nav-links">
                 
                 <ul>
-                    <li><a href="main.html"> MAIN </a></li>
+                    <!--<li><a href="main.html"> HOME </a></li> -->
                     <li><a href="course_review_form.html"> COURSE REVIEW FORM </a></li>
                     <li><a href="prof_review_form.html"> PROF REVIEW FORM </a></li>
                     <li><a href="university_review_form.html"> UNIVERSITY REVIEW FORM </a></li>
@@ -37,8 +37,8 @@
         
     </div>
     <div class="container">
-        <form actions="" class="search-bar">
-            <input type="text" placeholder="search anything" name="q">
+        <form actions="../backend/search_prof.php" class="search-bar">
+            <input type="text" placeholder="search professors, universities, courses..." name="q">
             <button type="submit"> <img src="search.png"></button>
 
         </form>
